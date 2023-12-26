@@ -31,6 +31,7 @@ public class ObjectMove : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                rb.velocity = Vector3.zero;
                 rb.useGravity = true;
                 allowMovement = false;
                 Debug.Log("ˆÚ“®‚ª§Œä‚³‚ê‚é");
