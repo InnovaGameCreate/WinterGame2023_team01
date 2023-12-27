@@ -6,15 +6,13 @@ public class ObjectMaker : MonoBehaviour
 {
     [SerializeField] private GameObject objectPrefab;
     [SerializeField] float spawnOffset;
-    private bool objectMake = false;
-    private Rigidbody rb;
     [SerializeField] private float wait;
     [SerializeField] private string targetTag = "Object";
+    bool objectMooving = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         SpawnObject();
     }
 
@@ -23,17 +21,14 @@ public class ObjectMaker : MonoBehaviour
         float maxY = FindMaxY();
         Debug.Log(maxY);
 
-        if (maxY < 0)
+        if(maxY < 0)
         {
-            Vector3 spawnPosition = new Vector3(0, spawnOffset, 0);
-            Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
-        }
-        else
-        {
-            Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);
-            Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
+            maxY = 0;
         }
 
+        Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);
+
+        Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
     }
 
     float FindMaxY()
@@ -53,10 +48,22 @@ public class ObjectMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(targetTag);
+        objectMooving = false;
+
+        foreach (GameObject obj in objectsWithTag)
         {
+            Rigidbody objrb = obj.GetComponent<Rigidbody>();
+            if (objrb != null && objrb.velocity.magnitude >= 0.1f)
+            {
+                objectMooving = true;
+                break;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return)　&& !objectMooving)
+        {    
             StartCoroutine(WaitGenerateObject());
-            objectMake = false;
         }
     }
 
@@ -64,11 +71,11 @@ public class ObjectMaker : MonoBehaviour
     {
         yield return new WaitForSeconds(wait);
 
-        if (rb.velocity.magnitude < 0.01f && !objectMake)
-        {
-            objectMake = true;
-            Debug.Log("新しいオブジェクトが生成される");
-            SpawnObject();
-        }
+        Debug.Log("新しいオブジェクトが生成される");
+        SpawnObject();
     }
+
+    //プログラムの問題点：Enterを連打するとオブジェクトが大量に生成される
+    //原因：Enterを入力した時点での判定になるため，設置していないオブジェクトがある状態でもオブジェクトが生成される
+    //解決案：Enterの入力をフラグにしてそのフラグの状態でオブジェクトを生成する
 }
