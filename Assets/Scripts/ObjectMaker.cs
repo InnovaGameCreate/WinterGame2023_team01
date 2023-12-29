@@ -8,6 +8,7 @@ public class ObjectMaker : MonoBehaviour
     [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
     [SerializeField] private float wait;
     [SerializeField] private string targetTag = "Object";
+    public float maxY = 0;
     bool objectMoving = false;
 
     // Start is called before the first frame update
@@ -18,14 +19,14 @@ public class ObjectMaker : MonoBehaviour
 
     void SpawnObject()
     {
-        float maxY = FindMaxY();
+        maxY = FindMaxY();
 
         if(maxY < 0)
         {
             maxY = 0;
         }
 
-        Vector3 spawnPosition = new Vector3(0, 6 + spawnOffset, 0);//変更中
+        Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);//変更中
 
         Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
     }
