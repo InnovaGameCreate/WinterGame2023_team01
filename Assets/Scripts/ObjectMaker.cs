@@ -28,7 +28,7 @@ public class ObjectMaker : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);//ïœçXíÜ
 
-        Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
+        Instantiate(objectPrefab, spawnPosition, objectPrefab.transform.rotation);
     }
 
     float FindMaxY()
