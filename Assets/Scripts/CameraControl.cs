@@ -8,6 +8,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField] private Camera subCamera1;
     [SerializeField] private Camera subCamera2;
     [SerializeField] private Camera subCamera3;
+    public int count = 0;
 
     /*
     void ActiveMainCamera()
@@ -40,12 +41,23 @@ public class CameraControl : MonoBehaviour
         subCamera1.enabled = false;
         subCamera2.enabled = false;
         subCamera3.enabled = true;
-    }
+    }*/
     void Start()
     {
-        mainCamera = Camera.main;
+        Debug.Log("Camera count:" + count);
+        cameraSet();
+        Debug.Log("Camera count:" + count);
+
     }
-    */
+    void cameraSet()
+    {
+        mainCamera.depth = (count + 1) % 4;
+        subCamera3.depth = (count + 2) % 4;
+        subCamera2.depth = (count + 3) % 4;
+        subCamera1.depth = count;
+
+    }
+
 
     void Update()
     {
@@ -71,28 +83,13 @@ public class CameraControl : MonoBehaviour
 
         // depthで切り替え
         // なんかバグる
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(mainCamera.depth < 0)
-            {
-                mainCamera.depth = 0;
-                subCamera1.depth = -1;
-            }
-            else if(subCamera1.depth < 0)
-            {
-                subCamera1.depth = 0;
-                subCamera2.depth = -1;
-            }
-            else if(subCamera2.depth < 0)
-            {
-                subCamera2.depth = 0;
-                subCamera3.depth = -1;
-            }
-            else if(subCamera3.depth < 0)
-            {
-                mainCamera.depth = -1;
-                subCamera3.depth = 0;
-            }
+            count = (count+1)%4;
+            cameraSet();
+            Debug.Log("Camera count:" + count);
+
+
         }
     }
 }

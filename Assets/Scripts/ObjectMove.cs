@@ -5,29 +5,41 @@ using UnityEngine;
 public class ObjectMove : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed;
-    private int count;
+
+    private int count = 0;
     private bool allowMovement = true;
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        count = 0;
+
+        countSet();
+        Debug.Log("count:" + count);
+
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
+    }
+    void countSet()
+    {
+        CameraControl cameracontrol;
+        GameObject obj = GameObject.Find("CameraControler");
+        cameracontrol = obj.GetComponent<CameraControl>();
+        count = (cameracontrol.count + 2) % 4;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            count = (count + 1) % 4;
+            Debug.Log("視点が切り替わる");
+            Debug.Log("count:" + count);
+        }
+
         if (allowMovement)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                count += 1;
-                if (count == 4) count = 0;
-                Debug.Log("視点が切り替わる");
-            }
 
             if (Input.GetKeyDown(KeyCode.Return))
             {
@@ -37,29 +49,37 @@ public class ObjectMove : MonoBehaviour
                 Debug.Log("移動が制御される");
             }
 
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+            float horizontalInput = 0;
+            float verticalInput = 0;
+            //Debug.Log(Input.GetAxis("Horizontal"));
+
+            Debug.Log(count);
 
             if (count == 0)
             {
                 //デフォルトの移動
-            }
+                horizontalInput = Input.GetAxis("Horizontal");
+                verticalInput = Input.GetAxis("Vertical");
+            }else 
             if (count == 1)
             {
-                float temp = horizontalInput;
-                horizontalInput = -verticalInput;
-                verticalInput = temp;
-            }
+                horizontalInput = -Input.GetAxis("Vertical");
+                verticalInput = Input.GetAxis("Horizontal");
+            }else
             if (count == 2)
             {
-                horizontalInput = -horizontalInput;
-                verticalInput = -verticalInput;
+                horizontalInput = -Input.GetAxis("Horizontal");
+                verticalInput = -Input.GetAxis("Vertical");
             }
+            else
             if (count == 3)
             {
-                float temp = horizontalInput;
-                horizontalInput = verticalInput;
-                verticalInput = -temp;
+                horizontalInput = Input.GetAxis("Vertical");
+                verticalInput = -Input.GetAxis("Horizontal");
+            }
+            else
+            {
+                Debug.Log("count の値がおかしい。" + count);
             }
 
             Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed * Time.deltaTime;
