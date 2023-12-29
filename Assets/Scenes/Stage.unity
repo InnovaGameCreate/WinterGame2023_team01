@@ -615,7 +615,7 @@ MonoBehaviour:
   subCamera1: {fileID: 507666489}
   subCamera2: {fileID: 596235139}
   subCamera3: {fileID: 1017084773}
-  count: 2
+  count: 3
 --- !u!4 &1638446453
 Transform:
   m_ObjectHideFlags: 0

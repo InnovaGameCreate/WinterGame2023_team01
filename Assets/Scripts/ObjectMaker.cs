@@ -25,7 +25,7 @@ public class ObjectMaker : MonoBehaviour
             maxY = 0;
         }
 
-        Vector3 spawnPosition = new Vector3(0, 30 + spawnOffset, 0);//•ÏX’†
+        Vector3 spawnPosition = new Vector3(0, 6 + spawnOffset, 0);//•ÏX’†
 
         Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
     }

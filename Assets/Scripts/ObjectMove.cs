@@ -13,7 +13,6 @@ public class ObjectMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         countSet();
         Debug.Log("count:" + count);
 
@@ -25,7 +24,7 @@ public class ObjectMove : MonoBehaviour
         CameraControl cameracontrol;
         GameObject obj = GameObject.Find("CameraControler");
         cameracontrol = obj.GetComponent<CameraControl>();
-        count = (cameracontrol.count + 2) % 4;
+        count = cameracontrol.count;
     }
 
     // Update is called once per frame
@@ -33,9 +32,10 @@ public class ObjectMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //Debug.Log("count:" + count);
             count = (count + 1) % 4;
-            Debug.Log("視点が切り替わる");
-            Debug.Log("count:" + count);
+            //Debug.Log("視点が切り替わる");
+            //Debug.Log("count:" + count);
         }
 
         if (allowMovement)
@@ -53,7 +53,7 @@ public class ObjectMove : MonoBehaviour
             float verticalInput = 0;
             //Debug.Log(Input.GetAxis("Horizontal"));
 
-            Debug.Log(count);
+            //Debug.Log(count);
 
             if (count == 0)
             {
@@ -82,7 +82,7 @@ public class ObjectMove : MonoBehaviour
                 Debug.Log("count の値がおかしい。" + count);
             }
 
-            Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed * Time.deltaTime;
+            Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed / 10;
             transform.Translate(movement);
         }
     }

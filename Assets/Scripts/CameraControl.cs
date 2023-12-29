@@ -44,17 +44,17 @@ public class CameraControl : MonoBehaviour
     }*/
     void Start()
     {
-        Debug.Log("Camera count:" + count);
-        cameraSet();
-        Debug.Log("Camera count:" + count);
+        count = 0;
+        cameraSet(count);
+        //Debug.Log("Camera count:" + count);
 
     }
-    void cameraSet()
+    void cameraSet(int c)
     {
-        mainCamera.depth = (count + 1) % 4;
-        subCamera3.depth = (count + 2) % 4;
-        subCamera2.depth = (count + 3) % 4;
-        subCamera1.depth = count;
+        mainCamera.depth = (c + 3) % 4;
+        subCamera1.depth = (c + 2) % 4;
+        subCamera2.depth = (c + 1) % 4;
+        subCamera3.depth = c;
 
     }
 
@@ -86,8 +86,8 @@ public class CameraControl : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             count = (count+1)%4;
-            cameraSet();
-            Debug.Log("Camera count:" + count);
+            cameraSet(count);
+            //Debug.Log("Camera count:" + count);
 
 
         }
