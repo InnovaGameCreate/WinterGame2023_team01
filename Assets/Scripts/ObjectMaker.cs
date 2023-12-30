@@ -5,10 +5,11 @@ using UnityEngine;
 public class ObjectMaker : MonoBehaviour
 {
     [SerializeField] private GameObject objectPrefab;
-    [SerializeField] float spawnOffset;
+    [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
     [SerializeField] private float wait;
     [SerializeField] private string targetTag = "Object";
-    bool objectMooving = false;
+    public float maxY = 0;
+    bool objectMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,14 @@ public class ObjectMaker : MonoBehaviour
 
     void SpawnObject()
     {
-        float maxY = FindMaxY();
-        Debug.Log(maxY);
+        maxY = FindMaxY();
 
         if(maxY < 0)
         {
             maxY = 0;
         }
 
-        Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);
+        Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);//変更中
 
         Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
     }
@@ -49,21 +49,22 @@ public class ObjectMaker : MonoBehaviour
     void Update()
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(targetTag);
-        objectMooving = false;
+        objectMoving = false;
 
         foreach (GameObject obj in objectsWithTag)
         {
             Rigidbody objrb = obj.GetComponent<Rigidbody>();
             if (objrb != null && objrb.velocity.magnitude >= 0.1f)
             {
-                objectMooving = true;
+                objectMoving = true;
                 break;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return)　&& !objectMooving)
+        if (Input.GetKeyDown(KeyCode.Return))
         {    
             StartCoroutine(WaitGenerateObject());
+
         }
     }
 
