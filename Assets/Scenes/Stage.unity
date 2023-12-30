@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b706809e683b4942b539234b5295890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 7657063634447184177, guid: 351a3b4b5aed2c340af47ad31f616197, type: 3}
+  objectPrefab: {fileID: 6858010821484954338, guid: 72f68372dab7bd64b8668fa56408b9a1, type: 3}
   spawnOffset: 6
   wait: 5
   targetTag: Object

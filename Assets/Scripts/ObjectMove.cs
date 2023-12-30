@@ -83,7 +83,7 @@ public class ObjectMove : MonoBehaviour
             }
 
             Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed / 10;
-            transform.Translate(movement);
+            transform.Translate(movement,Space.World);
         }
     }
 }
