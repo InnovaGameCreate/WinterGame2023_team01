@@ -10,6 +10,7 @@ public class ObjectMaker : MonoBehaviour
     [SerializeField] private string targetTag = "Object";
     public float maxY = 0;
     bool objectMoving = false;
+    bool canMake = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,8 @@ public class ObjectMaker : MonoBehaviour
 
     void SpawnObject()
     {
+        canMake = true;
+
         maxY = FindMaxY();
 
         if(maxY < 0)
@@ -61,22 +64,19 @@ public class ObjectMaker : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
-        {    
+        if (Input.GetKeyDown(KeyCode.Return) && canMake)
+        {
+            canMake = false;    
             StartCoroutine(WaitGenerateObject());
-
         }
     }
 
     IEnumerator WaitGenerateObject()
     {
+
         yield return new WaitForSeconds(wait);
 
         Debug.Log("新しいオブジェクトが生成される");
         SpawnObject();
     }
-
-    //プログラムの問題点：Enterを連打するとオブジェクトが大量に生成される
-    //原因：Enterを入力した時点での判定になるため，設置していないオブジェクトがある状態でもオブジェクトが生成される
-    //解決案：Enterの入力をフラグにしてそのフラグの状態でオブジェクトを生成する
 }
