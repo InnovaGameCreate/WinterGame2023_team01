@@ -364,6 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasPrefab: {fileID: 5416074882036279581, guid: 26c40e207c0474039bcd88df3b872cef, type: 3}
+  GoTitlePrefab: {fileID: 1410376663932773599, guid: dc7d323f2535047038b5a92d3e326b80, type: 3}
+  CameraControler: {fileID: 1638446451}
 --- !u!1 &507666487
 GameObject:
   m_ObjectHideFlags: 0
