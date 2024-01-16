@@ -15,6 +15,12 @@ public class GoGame : MonoBehaviour
     private Vector3 rot;
     private float count = 1;
     //private Vector3 addVector = (gogame_transform.position - initial_object.transform.position)
+    void go()
+    {
+        count = time * fps;
+        isStart = true;
+
+    }
     private void Start()
     {
         pos = (gogame_transform.position - initial_object.transform.position)/ (time * fps);
@@ -26,8 +32,7 @@ public class GoGame : MonoBehaviour
         // if(Input.GetKey(KeyCode.Return)) // エンターキーでMainシーンへ
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Return))
         {
-            count = time * fps;
-            isStart = true;
+            go();
         }
 
         if (isStart && count > 0)
