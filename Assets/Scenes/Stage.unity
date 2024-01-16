@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b706809e683b4942b539234b5295890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 5129795049890696085, guid: 9530819076fc5bb488865128362c717f, type: 3}
+  objectPrefab: {fileID: 1953780762730530088, guid: 33390811d876bd84eaeed068c0a828e0, type: 3}
   spawnOffset: 6
   wait: 5
   targetTag: Object
