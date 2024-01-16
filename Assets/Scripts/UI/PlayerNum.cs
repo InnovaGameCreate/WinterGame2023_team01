@@ -8,6 +8,7 @@ public class PlayerNum : MonoBehaviour
     
     public GameObject num= null; // Textオブジェクト
     public int player_num = 0; // 変数
+    [SerializeField] string playerText;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +16,7 @@ public class PlayerNum : MonoBehaviour
          // オブジェクトからTextコンポーネントを取得
         Text Player_text = num.GetComponent<Text> ();
              // テキストの表示を入れ替える
-     Player_text.text = "Player:" + player_num;
+     Player_text.text = playerText + ":" + player_num;
 
     }
 }
