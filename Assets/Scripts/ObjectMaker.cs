@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class ObjectMaker : MonoBehaviour
 {
-    [SerializeField] private GameObject objectPrefab;
+    [SerializeField] private GameObject[] objectPrefabs;
     [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
     [SerializeField] private float wait;
-    [SerializeField] private string targetTag = "Object";
+    [SerializeField] private int player; 
     public float maxY = 0;
-    bool objectMoving = false;
+    bool objectMoving = true;
     bool canMake = true;
+    public int turn;
+    private string targetTag = "Object";
 
     // Start is called before the first frame update
     void Start()
     {
         SpawnObject();
+        turn = 0;
     }
 
     void SpawnObject()
@@ -29,9 +32,13 @@ public class ObjectMaker : MonoBehaviour
             maxY = 0;
         }
 
-        Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);//変更中
+        Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);
 
-        Instantiate(objectPrefab, spawnPosition, objectPrefab.transform.rotation);
+        int random = Random.Range(0, objectPrefabs.Length);
+        GameObject select = objectPrefabs[random];
+
+        Instantiate(select, spawnPosition, select.transform.rotation);
+
     }
 
     float FindMaxY()
@@ -51,19 +58,6 @@ public class ObjectMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(targetTag);
-        objectMoving = false;
-
-        foreach (GameObject obj in objectsWithTag)
-        {
-            Rigidbody objrb = obj.GetComponent<Rigidbody>();
-            if (objrb != null && objrb.velocity.magnitude >= 0.1f)
-            {
-                objectMoving = true;
-                break;
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.Return) && canMake)
         {
             canMake = false;    
@@ -76,7 +70,35 @@ public class ObjectMaker : MonoBehaviour
 
         yield return new WaitForSeconds(wait);
 
-        Debug.Log("新しいオブジェクトが生成される");
-        SpawnObject();
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(targetTag);
+        
+        foreach (GameObject obj in objectsWithTag)
+        {
+            Rigidbody objrb = obj.GetComponent<Rigidbody>();
+            Debug.Log(objrb.velocity.magnitude);
+            objectMoving = false;
+
+            if (objrb != null && objrb.velocity.magnitude <= 0.01f)
+            {
+                objectMoving = true;
+                Debug.Log("objectMoving True");
+                break;
+            }
+        }
+
+        if (objectMoving)
+        {
+            Debug.Log("新しいオブジェクトが生成される");
+            SpawnObject();
+
+            if (turn < player-1)
+            {
+                turn++;
+            }
+            else
+            {
+                turn = 0;
+            }
+        }
     }
 }
