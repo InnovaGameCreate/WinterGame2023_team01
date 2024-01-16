@@ -15,10 +15,6 @@ public class GoGame : MonoBehaviour
     private Vector3 rot;
     private float count = 1;
     //private Vector3 addVector = (gogame_transform.position - initial_object.transform.position)
-    void AddPosition()
-    {
-
-    }
     private void Start()
     {
         pos = (gogame_transform.position - initial_object.transform.position)/ (time * fps);
