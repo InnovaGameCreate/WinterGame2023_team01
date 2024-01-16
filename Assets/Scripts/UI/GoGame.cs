@@ -8,7 +8,10 @@ public class GoGame : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) // スペースキーでMainシーンへ
-        // if(Input.GetKey(KeyCode.Return)) // エンターキーでMainシーンへ
+        {
+              SceneManager.LoadScene("Stage");
+        }
+         if(Input.GetKey(KeyCode.Return)) // エンターキーでMainシーンへ
             SceneManager.LoadScene("Stage");
     }
 }
