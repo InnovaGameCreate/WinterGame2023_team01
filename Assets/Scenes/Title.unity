@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 225829788}
   - component: {fileID: 225829787}
   - component: {fileID: 225829786}
-  - component: {fileID: 225829785}
   m_Layer: 0
   m_Name: Main Camera gogame
   m_TagString: MainCamera
@@ -288,18 +287,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &225829785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225829784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96834742ddaf4a340a48ed62e070a736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &225829786
 AudioListener:
   m_ObjectHideFlags: 0
@@ -472,7 +459,6 @@ GameObject:
   - component: {fileID: 328263054}
   - component: {fileID: 328263053}
   - component: {fileID: 328263052}
-  - component: {fileID: 328263051}
   m_Layer: 0
   m_Name: Quad
   m_TagString: FallCheck
@@ -480,21 +466,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &328263051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328263050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb77cc35344554bda88aa1ab3322ac26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasPrefab: {fileID: 5416074882036279581, guid: 26c40e207c0474039bcd88df3b872cef, type: 3}
-  GoTitlePrefab: {fileID: 1410376663932773599, guid: dc7d323f2535047038b5a92d3e326b80, type: 3}
-  CameraControler: {fileID: 0}
 --- !u!64 &328263052
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1827,7 +1798,6 @@ GameObject:
   - component: {fileID: 1838115035}
   - component: {fileID: 1838115038}
   - component: {fileID: 1838115037}
-  - component: {fileID: 1838115036}
   m_Layer: 0
   m_Name: Main Camera initial
   m_TagString: MainCamera
@@ -1850,18 +1820,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 23.878, y: 32.771, z: 4.123}
---- !u!114 &1838115036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838115034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96834742ddaf4a340a48ed62e070a736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1838115037
 AudioListener:
   m_ObjectHideFlags: 0
