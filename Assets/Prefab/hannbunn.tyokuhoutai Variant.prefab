@@ -51,6 +51,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d71f4149c9d1fc48851d2e95430492c, type: 2}
     - target: {fileID: 919132149155446097, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
       propertyPath: m_Name
       value: hannbunn.tyokuhoutai Variant
@@ -105,3 +113,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
+  xRotetionSpeed: 0
+  yRotetionSpeed: 0

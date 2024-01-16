@@ -1390,13 +1390,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b706809e683b4942b539234b5295890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
-  objectPrefab: {fileID: 8066657968727503842, guid: 0fa42f46f6aa5f248812c5b2ada6983c, type: 3}
-
-  spawnOffset: 6
-  wait: 3
-  targetTag: Object
-  player: 4
+  objectPrefabs:
+  - {fileID: 7334760534710374182, guid: a3b12903d09827b4399f4f9afdf3344d, type: 3}
+  - {fileID: 6822241874119494731, guid: 636e0cbe5220f354dbc381b585896567, type: 3}
+  - {fileID: 8087012613031965358, guid: fbc4d3bf90ace5a448d5589c5ebc8379, type: 3}
+  - {fileID: 5871764666218601821, guid: 6892eec6f240d644abeb13930ad9256c, type: 3}
+  - {fileID: 7807045526348114199, guid: 3d6ee875f8151634f9cbe214246cc3f9, type: 3}
+  - {fileID: 1439237074012312621, guid: 2525cffa55abbe04c8d3038480fca949, type: 3}
+  spawnOffset: 0
+  wait: 0
+  player: 0
   maxY: 0
   turn: 0
 --- !u!4 &1842206286
