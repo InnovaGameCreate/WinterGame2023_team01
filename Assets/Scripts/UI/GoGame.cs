@@ -24,7 +24,7 @@ public class GoGame : MonoBehaviour
     void Update()
     {
         // if(Input.GetKey(KeyCode.Return)) // エンターキーでMainシーンへ
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.Return))
         {
             count = time * fps;
             isStart = true;
