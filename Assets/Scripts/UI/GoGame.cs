@@ -41,14 +41,12 @@ public class GoGame : MonoBehaviour
             initial_object.transform.eulerAngles += rot;
             count--;
         }
-        if(count <= 0)
+        if (count <= 0)
         {
             // スペースキーでMainシーンへ
             SceneManager.LoadScene("Stage");
 
         }
-
-
 
     }
 }

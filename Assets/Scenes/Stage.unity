@@ -1390,11 +1390,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b706809e683b4942b539234b5295890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 1953780762730530088, guid: 33390811d876bd84eaeed068c0a828e0, type: 3}
+
+  objectPrefab: {fileID: 8066657968727503842, guid: 0fa42f46f6aa5f248812c5b2ada6983c, type: 3}
+
   spawnOffset: 6
-  wait: 5
+  wait: 3
   targetTag: Object
+  player: 4
   maxY: 0
+  turn: 0
 --- !u!4 &1842206286
 Transform:
   m_ObjectHideFlags: 0

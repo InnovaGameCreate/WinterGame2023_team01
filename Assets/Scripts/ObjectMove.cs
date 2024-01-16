@@ -5,6 +5,9 @@ using UnityEngine;
 public class ObjectMove : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed;
+    [SerializeField] private float xRotetionSpeed;
+    [SerializeField] private float yRotetionSpeed;
+
 
     private int count = 0;
     private bool allowMovement = true;
@@ -32,10 +35,7 @@ public class ObjectMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Debug.Log("count:" + count);
             count = (count + 1) % 4;
-            //Debug.Log("éãì_Ç™êÿÇËë÷ÇÌÇÈ");
-            //Debug.Log("count:" + count);
         }
 
         if (allowMovement)
@@ -51,9 +51,6 @@ public class ObjectMove : MonoBehaviour
 
             float horizontalInput = 0;
             float verticalInput = 0;
-            //Debug.Log(Input.GetAxis("Horizontal"));
-
-            //Debug.Log(count);
 
             if (count == 0)
             {
@@ -84,6 +81,15 @@ public class ObjectMove : MonoBehaviour
 
             Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed / 10;
             transform.Translate(movement,Space.World);
+
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                transform.Rotate(Vector3.right, yRotetionSpeed * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                transform.Rotate(Vector3.up, xRotetionSpeed * Time.deltaTime, Space.World);
+            }
         }
     }
 }
