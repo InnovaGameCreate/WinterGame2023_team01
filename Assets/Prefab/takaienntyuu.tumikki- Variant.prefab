@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 526c8a36250199149893d630ae911438, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b019a75bf3824e544958b5fd9f5442ee, type: 2}
     - target: {fileID: 919132149155446097, guid: 526c8a36250199149893d630ae911438, type: 3}
       propertyPath: m_Name
       value: takaienntyuu.tumikki- Variant
@@ -105,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
+  xRotetionSpeed: 0
+  yRotetionSpeed: 0
