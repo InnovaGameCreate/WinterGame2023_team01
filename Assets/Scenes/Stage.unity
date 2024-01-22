@@ -1397,7 +1397,7 @@ MonoBehaviour:
   - {fileID: 5871764666218601821, guid: 6892eec6f240d644abeb13930ad9256c, type: 3}
   - {fileID: 7807045526348114199, guid: 3d6ee875f8151634f9cbe214246cc3f9, type: 3}
   - {fileID: 1439237074012312621, guid: 2525cffa55abbe04c8d3038480fca949, type: 3}
-  spawnOffset: 0
+  spawnOffset: 5
   wait: 0
   player: 0
   maxY: 0
