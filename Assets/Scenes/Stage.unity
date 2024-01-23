@@ -654,6 +654,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5099030824482218891, guid: 2fc0f90700b70fc4992ac028dfc0a942, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5252316280107088453, guid: 2fc0f90700b70fc4992ac028dfc0a942, type: 3}
     - {fileID: 4768155313867796209, guid: 2fc0f90700b70fc4992ac028dfc0a942, type: 3}
