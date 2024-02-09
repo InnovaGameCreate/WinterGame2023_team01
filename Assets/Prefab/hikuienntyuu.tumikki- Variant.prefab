@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hikuienntyuu.tumikki- Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6dc9c96e2b23c5549b7197db914ecae2, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc9c96e2b23c5549b7197db914ecae2, type: 3}
 --- !u!1 &8087012613031965358 stripped
@@ -109,5 +113,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
-  xRotetionSpeed: 0
-  yRotetionSpeed: 0
+  xRotetionSpeed: 50
+  yRotetionSpeed: 80

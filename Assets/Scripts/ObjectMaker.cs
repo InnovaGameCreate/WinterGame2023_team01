@@ -6,19 +6,31 @@ public class ObjectMaker : MonoBehaviour
 {
     [SerializeField] private GameObject[] objectPrefabs;
     [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
-    [SerializeField] private float wait;
+    [SerializeField] private float wait = 3;
     [SerializeField] private int player; 
     public float maxY = 0;
     bool objectMoving = true;
     bool canMake = true;
-    public int turn;
+    public int count;
     private string targetTag = "Object";
 
     // Start is called before the first frame update
     void Start()
     {
         SpawnObject();
-        turn = 0;
+        count = 0;
+    }
+
+    public int Count
+    {
+        get { return count; }
+        set { count = value; }
+    }
+
+    public float MaxY
+    {
+        get { return maxY; }
+        set { maxY = value; }
     }
 
     void SpawnObject()
@@ -90,15 +102,7 @@ public class ObjectMaker : MonoBehaviour
         {
             Debug.Log("新しいオブジェクトが生成される");
             SpawnObject();
-
-            if (turn < player-1)
-            {
-                turn++;
-            }
-            else
-            {
-                turn = 0;
-            }
+            count++;
         }
     }
 }
