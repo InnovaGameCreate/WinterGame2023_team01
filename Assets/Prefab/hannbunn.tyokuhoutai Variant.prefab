@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hannbunn.tyokuhoutai Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
 --- !u!1 &7334760534710374182 stripped
@@ -113,5 +117,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
-  xRotetionSpeed: 0
-  yRotetionSpeed: 0
+  xRotetionSpeed: 50
+  yRotetionSpeed: 80

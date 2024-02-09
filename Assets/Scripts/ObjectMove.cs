@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed;
-    [SerializeField] private float xRotetionSpeed;
-    [SerializeField] private float yRotetionSpeed;
+    [SerializeField] private float MoveSpeed = 1;
+    [SerializeField] private float xRotetionSpeed = 50;
+    [SerializeField] private float yRotetionSpeed = 80;
 
 
     private int count = 0;
