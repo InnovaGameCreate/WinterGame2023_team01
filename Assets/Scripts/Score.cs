@@ -38,6 +38,6 @@ public class Score : MonoBehaviour
         score = (int)Math.Floor(score);
         dataCs.score = score;
 
-        scoreText.text = "Score" + score.ToString();
+        scoreText.text = "スコア：" + score.ToString();
     }
 }
