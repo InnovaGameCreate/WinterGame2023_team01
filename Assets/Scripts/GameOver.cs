@@ -20,8 +20,8 @@ public class GameOver : MonoBehaviour
       // GoTitleを表示
       Instantiate(GoTitlePrefab);
 
-      // CameraControlerを削除
-      Destroy(CameraControler);
+      // CameraControlerを非アクティブ
+      CameraControler.gameObject.SetActive(false);
 
       // Debug.Log("Hit");
     }
