@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GoTitle : MonoBehaviour
 {
+    public void GoTitlef()
+    {
+        SceneManager.LoadScene("Title");
+    }
     void Update()
     {
-      if(Input.GetKey(KeyCode.Space)) // スペースキーでTitleシーンへ
-        SceneManager.LoadScene("Title");
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) GoTitlef();
     }
 }

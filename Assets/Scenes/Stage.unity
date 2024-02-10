@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 491015627}
   - component: {fileID: 491015631}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Floor
   m_TagString: FallCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,8 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77cc35344554bda88aa1ab3322ac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasPrefab: {fileID: 3235475186230379538, guid: 26c40e207c0474039bcd88df3b872cef, type: 3}
-  GoTitlePrefab: {fileID: 1410376663932773599, guid: dc7d323f2535047038b5a92d3e326b80, type: 3}
+  CanvasPrefab: {fileID: 3645495740474371935, guid: 63845113a7692fc4d909c2a79f453f52, type: 3}
   CameraControler: {fileID: 1638446451}
 --- !u!1 &507666487
 GameObject:

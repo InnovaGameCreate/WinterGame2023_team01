@@ -14,12 +14,16 @@ public class StageSelect : MonoBehaviour
     {
         DontDestroyOnLoad(this);
     }
-    void Update()
+    public void DispText()
     {
         // オブジェクトからTextコンポーネントを取得
         Text Stage_text = stageselect.GetComponent<Text>();
         // テキストの表示を入れ替える
         Stage_text.text = stages[stage_num];
 
+    }
+    void Update()
+    {
+        
     }
 }

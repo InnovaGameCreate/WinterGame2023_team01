@@ -13,5 +13,6 @@ public class StageChangeLeft : MonoBehaviour
                                            // ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚çl”‚ğˆê‚Â‘‚·
 
         stagemanager.stage_num = (stagemanager.stage_num + stagemanager.stages.Length - 1) % stagemanager.stages.Length;
+        stagemanager.DispText();
     }
 }
