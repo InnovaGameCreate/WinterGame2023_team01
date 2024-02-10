@@ -17,6 +17,7 @@ public class GoGame : MonoBehaviour
     //private Vector3 addVector = (gogame_transform.position - initial_object.transform.position)
     public void go()
     {
+        GetComponent<AudioSource>().Play();
         count = time * fps;
         isStart = true;
 

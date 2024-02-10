@@ -85,6 +85,7 @@ public class CameraControl : MonoBehaviour
         // なんかバグる
         if(Input.GetKeyDown(KeyCode.Space))
         {
+            GetComponent<AudioSource>().Play();
             count = (count+1)%4;
             cameraSet(count);
             //Debug.Log("Camera count:" + count);
