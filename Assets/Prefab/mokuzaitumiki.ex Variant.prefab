@@ -59,5 +59,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: mokuzaitumiki.ex Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17957f584d033e24a802e700afc21236, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17957f584d033e24a802e700afc21236, type: 3}
+--- !u!1 &3267575778946586564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 17957f584d033e24a802e700afc21236, type: 3}
+  m_PrefabInstance: {fileID: 2421154334810385045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8638347919735760494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267575778946586564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745cead72f5568944b60f3c2ab15c280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 1
+  xRotetionSpeed: 50
+  yRotetionSpeed: 80

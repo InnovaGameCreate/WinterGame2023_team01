@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-      // プレハブでResult表示
+      // Canvasプレハブをアクティブ
       Instantiate(CanvasPrefab);
       // シーン切り替えでResult表示
       // SceneManager.LoadScene("Result");
@@ -20,8 +20,8 @@ public class GameOver : MonoBehaviour
       // GoTitleを表示
       Instantiate(GoTitlePrefab);
 
-      // CameraControlerを削除
-      Destroy(CameraControler);
+      // CameraControlerを非アクティブ
+      CameraControler.gameObject.SetActive(false);
 
       // Debug.Log("Hit");
     }

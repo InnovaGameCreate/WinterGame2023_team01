@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tspin Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2f8a9a56bc7514a4892a3fae6c851c9e, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f8a9a56bc7514a4892a3fae6c851c9e, type: 3}
 --- !u!1 &7807045526348114199 stripped
@@ -124,6 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745cead72f5568944b60f3c2ab15c280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
-  xRotetionSpeed: 50
-  yRotetionSpeed: 80
+  MoveSpeed: 2
+  xRotetionSpeed: 40
+  yRotetionSpeed: 70

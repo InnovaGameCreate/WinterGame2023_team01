@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: taisyou.chocolate Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6be8e6ad50d0b11468d75cbda336a910, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be8e6ad50d0b11468d75cbda336a910, type: 3}
 --- !u!1 &6530363366002438373 stripped
@@ -121,3 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 1
+  xRotetionSpeed: 50
+  yRotetionSpeed: 80
