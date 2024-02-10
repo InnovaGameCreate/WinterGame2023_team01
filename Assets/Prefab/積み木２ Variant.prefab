@@ -53,7 +53,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc61f2710bc352942b983a85dd7ef6ce, type: 3}
       propertyPath: m_Name
-      value: "\u7A4D\u307F\u6728\uFF12"
+      value: "\u7A4D\u307F\u6728\uFF12 Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc61f2710bc352942b983a85dd7ef6ce, type: 3}
+      propertyPath: m_TagString
+      value: Object
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc61f2710bc352942b983a85dd7ef6ce, type: 3}
+--- !u!1 &379116361921999615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc61f2710bc352942b983a85dd7ef6ce, type: 3}
+  m_PrefabInstance: {fileID: 685547164032241582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7805709973916149471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379116361921999615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 745cead72f5568944b60f3c2ab15c280, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 1
+  xRotetionSpeed: 50
+  yRotetionSpeed: 80
