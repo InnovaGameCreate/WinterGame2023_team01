@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00047635715, g: 0.00047544195, b: 0.00050527503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 491015627}
   - component: {fileID: 491015631}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Floor
   m_TagString: FallCheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,8 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77cc35344554bda88aa1ab3322ac26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasPrefab: {fileID: 3235475186230379538, guid: 26c40e207c0474039bcd88df3b872cef, type: 3}
-  GoTitlePrefab: {fileID: 1410376663932773599, guid: dc7d323f2535047038b5a92d3e326b80, type: 3}
+  CanvasPrefab: {fileID: 3645495740474371935, guid: 63845113a7692fc4d909c2a79f453f52, type: 3}
   CameraControler: {fileID: 1638446451}
 --- !u!1 &507666487
 GameObject:
@@ -652,6 +651,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4364364756161961045, guid: 2fc0f90700b70fc4992ac028dfc0a942, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099030824482218891, guid: 2fc0f90700b70fc4992ac028dfc0a942, type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -1633,12 +1636,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b706809e683b4942b539234b5295890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
+  Tsumiki:
   - {fileID: 7334760534710374182, guid: a3b12903d09827b4399f4f9afdf3344d, type: 3}
   - {fileID: 6822241874119494731, guid: 636e0cbe5220f354dbc381b585896567, type: 3}
   - {fileID: 8087012613031965358, guid: fbc4d3bf90ace5a448d5589c5ebc8379, type: 3}
   - {fileID: 5871764666218601821, guid: 6892eec6f240d644abeb13930ad9256c, type: 3}
   - {fileID: 7807045526348114199, guid: 3d6ee875f8151634f9cbe214246cc3f9, type: 3}
+  Sonota:
+  - {fileID: 278842575314599615, guid: 54d81fb3628090c47b6646437c88a556, type: 3}
+  - {fileID: 8467918902683825826, guid: 60319b9e8261c0e4495b6f26aaa74feb, type: 3}
+  - {fileID: 7543431417135491248, guid: 0bc080dc458e4e345a5e2af5759d58c6, type: 3}
+  - {fileID: 842214419861143544, guid: b8a64e539d625d143a37fecf2967604c, type: 3}
+  - {fileID: 7628977021562177441, guid: e6395da14940ec44e8086d96b1e4999b, type: 3}
   spawnOffset: 5
   wait: 3
   player: 0

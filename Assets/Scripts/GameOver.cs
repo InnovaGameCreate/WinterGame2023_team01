@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField]private GameObject CanvasPrefab;
-    [SerializeField]private GameObject GoTitlePrefab;
+    //[SerializeField]private GameObject GoTitlePrefab; //要らなくね？
     [SerializeField]private GameObject CameraControler;
 
 
@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
       // SceneManager.LoadScene("Result");
 
       // GoTitleを表示
-      Instantiate(GoTitlePrefab);
+      //Instantiate(GoTitlePrefab); //これもいらなくね？
 
       // CameraControlerを非アクティブ
       CameraControler.gameObject.SetActive(false);
