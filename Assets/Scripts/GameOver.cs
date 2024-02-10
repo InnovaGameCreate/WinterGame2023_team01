@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-      // プレハブでResult表示
+      // Canvasプレハブをアクティブ
       CanvasPrefab.gameObject.SetActive(true);
       // シーン切り替えでResult表示
       // SceneManager.LoadScene("Result");
