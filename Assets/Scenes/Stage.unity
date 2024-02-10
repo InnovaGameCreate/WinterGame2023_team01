@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00047635715, g: 0.00047544195, b: 0.00050527503, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1637,12 +1637,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b706809e683b4942b539234b5295890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPrefabs:
+  Tsumiki:
   - {fileID: 7334760534710374182, guid: a3b12903d09827b4399f4f9afdf3344d, type: 3}
   - {fileID: 6822241874119494731, guid: 636e0cbe5220f354dbc381b585896567, type: 3}
   - {fileID: 8087012613031965358, guid: fbc4d3bf90ace5a448d5589c5ebc8379, type: 3}
   - {fileID: 5871764666218601821, guid: 6892eec6f240d644abeb13930ad9256c, type: 3}
   - {fileID: 7807045526348114199, guid: 3d6ee875f8151634f9cbe214246cc3f9, type: 3}
+  Sonota:
+  - {fileID: 278842575314599615, guid: 54d81fb3628090c47b6646437c88a556, type: 3}
+  - {fileID: 8467918902683825826, guid: 60319b9e8261c0e4495b6f26aaa74feb, type: 3}
+  - {fileID: 7543431417135491248, guid: 0bc080dc458e4e345a5e2af5759d58c6, type: 3}
+  - {fileID: 842214419861143544, guid: b8a64e539d625d143a37fecf2967604c, type: 3}
+  - {fileID: 7628977021562177441, guid: e6395da14940ec44e8086d96b1e4999b, type: 3}
   spawnOffset: 5
   wait: 3
   player: 0
