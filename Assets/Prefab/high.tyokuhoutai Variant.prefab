@@ -113,5 +113,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  xRotetionSpeed: 40
+  xRotetionSpeed: 50
   yRotetionSpeed: 80
