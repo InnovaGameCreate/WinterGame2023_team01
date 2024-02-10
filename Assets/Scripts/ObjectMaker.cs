@@ -104,5 +104,10 @@ public class ObjectMaker : MonoBehaviour
             SpawnObject();
             count++;
         }
+        else
+        {
+            Debug.Log("オブジェクトがまだ動いている");
+            StartCoroutine(WaitGenerateObject());
+        }
     }
 }
