@@ -15,6 +15,7 @@ public class Score : MonoBehaviour
     [SerializeField] float yValue;
     private GameObject data;
     private Data dataCs;
+    bool end;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,14 @@ public class Score : MonoBehaviour
 
         countValue = objectMaker.Count;
         yValue = objectMaker.MaxY;
-
+        end = objectMaker.game_end;
         //score = countValue;
         //score = yValue;
-        score = (float)countValue * weight1 + yValue * weight2;
-        score = (int)Math.Floor(score);
-        dataCs.score = score;
+        if (!end) {
+            score = (float)countValue * weight1 + yValue * weight2;
+            score = (int)Math.Floor(score);
+            dataCs.score = score;
+        }
 
         scoreText.text = "スコア：" + score.ToString();
     }
