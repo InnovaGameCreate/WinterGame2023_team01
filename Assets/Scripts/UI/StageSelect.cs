@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class StageSelect : MonoBehaviour
 {
     [SerializeField] public GameObject stageselect; // Textオブジェクト
@@ -12,7 +12,8 @@ public class StageSelect : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        DontDestroyOnLoad(this);
+        if(SceneManager.GetActiveScene().name == "Title") DontDestroyOnLoad(this);
+
     }
     public void DispText()
     {
