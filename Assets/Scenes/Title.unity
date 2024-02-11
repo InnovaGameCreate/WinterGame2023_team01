@@ -219,6 +219,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 567491581}
+        m_TargetAssemblyTypeName: SESound, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &16644123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,7 +1763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "(\u30E2\u30FC\u30C9)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
   m_sharedMaterial: {fileID: -3734009832005612792, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
@@ -1994,6 +2006,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 924166078}
         m_TargetAssemblyTypeName: numM1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 567491581}
+        m_TargetAssemblyTypeName: SESound, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -2525,7 +2549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "(\u4EBA<style=p2>\u306B\u3093</style>\u6570<style=p2>\u305A\u3046</style>)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
   m_sharedMaterial: {fileID: -3734009832005612792, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
@@ -3199,6 +3223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   num: {fileID: 1393103799}
+  playerNumStr:
+  - "\u3072\u3068\u308A"
+  - "\u3075\u305F\u308A"
   player_max_num: 2
-  player_num: 1
+  player_num: 0
   playerText: "\u4EBA<style=p2>\u306B\u3093</style>\u6570<style=p2>\u305A\u3046</style>"

@@ -8,14 +8,17 @@ public class PlayerNum : MonoBehaviour
 {
     
     public GameObject num = null; // Textオブジェクト
-    [SerializeField] public int player_max_num;
-    public int player_num = 0; // 変数
+    [SerializeField] private string[] playerNumStr;
+    public int player_max_num;
+    public int player_num; // 変数
     [SerializeField] string playerText;
     private TextMeshProUGUI Player_text;
 
     // Update is called once per frame
     private void Start()
     {
+        player_num = 0;//初期化
+        player_max_num = playerNumStr.Length;
         // オブジェクトからTextコンポーネントを取得
         Player_text = num.GetComponent<TextMeshProUGUI>();
     }
@@ -23,7 +26,7 @@ public class PlayerNum : MonoBehaviour
     {
        
         // テキストの表示を入れ替える
-        Player_text.text = playerText + "：" + player_num;
+        Player_text.text = playerText + "：" + playerNumStr[player_num];
 
     }
 }

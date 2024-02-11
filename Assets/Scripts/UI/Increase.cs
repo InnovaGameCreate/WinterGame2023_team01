@@ -17,7 +17,7 @@ public class Increase : MonoBehaviour
     }
     public void OnClick()
     {
-        playernum.player_num %= maxNum;
         playernum.player_num++;
+        playernum.player_num %= maxNum;
     }
 }

@@ -17,9 +17,7 @@ public class Decrease : MonoBehaviour
     }
     public void OnClick()
     {
-        playernum.player_num--;
         playernum.player_num += maxNum - 1;
         playernum.player_num %= maxNum;
-        playernum.player_num++;
     }
 }
