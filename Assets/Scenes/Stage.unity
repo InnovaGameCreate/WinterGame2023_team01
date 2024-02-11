@@ -2227,11 +2227,13 @@ MonoBehaviour:
   - {fileID: 7543431417135491248, guid: 0bc080dc458e4e345a5e2af5759d58c6, type: 3}
   - {fileID: 842214419861143544, guid: b8a64e539d625d143a37fecf2967604c, type: 3}
   - {fileID: 7628977021562177441, guid: e6395da14940ec44e8086d96b1e4999b, type: 3}
-  spawnOffset: 5
+  spawnOffset: 6
   wait: 3
   player: 0
   maxY: 0
+  minY: 0
   count: 0
+  game_end: 0
 --- !u!4 &1842206286
 Transform:
   m_ObjectHideFlags: 0
