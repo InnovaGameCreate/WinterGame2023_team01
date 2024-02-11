@@ -12,6 +12,7 @@ public class TurnControl : MonoBehaviour
     private GameObject data;
     private Data dataCs;
     int player;
+    int player_num;
 
     // Start is called before the first frame update
     void Start()
@@ -24,22 +25,10 @@ public class TurnControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dataCs.turn = player;
+
+        player_num = objectMaker.player_num;
+        dataCs.player_num = player_num;
         player = objectMaker.players + 1;
-        switch (player)
-        {
-            case 1: 
-                turnText.text = "<style=Blue>Player" + player + "</style>";
-                break;
-            case 2:
-                turnText.text = "<style=Red>Player" + player + "</style>";
-                break;
-
-            default:
-                turnText.text = "Player" + player;
-                break;
-
-        }
 
     }
 }

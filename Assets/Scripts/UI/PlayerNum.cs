@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerNum : MonoBehaviour
@@ -17,6 +18,7 @@ public class PlayerNum : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
+        if (SceneManager.GetActiveScene().name == "Title") DontDestroyOnLoad(this);
         player_num = 0;//初期化
         player_max_num = playerNumStr.Length;
         // オブジェクトからTextコンポーネントを取得

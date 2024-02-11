@@ -6,6 +6,8 @@ public class Data : MonoBehaviour
 {
     public float score;
     public int turn;
+    public int player_num;
+
     // Start is called before the first frame update
     void Start()
     {
