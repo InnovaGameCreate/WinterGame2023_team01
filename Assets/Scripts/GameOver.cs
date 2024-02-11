@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
     [SerializeField]private GameObject CameraControler;
     private GameObject stageManager;
     private GameObject canvas;
+    private GameObject playerNum;
     private bool isGameOver;
 
     private void Start()
@@ -17,6 +18,7 @@ public class GameOver : MonoBehaviour
         isGameOver = false;
         stageManager = GameObject.Find("StageManager");
         canvas = GameObject.Find("Canvas");
+        playerNum = GameObject.Find("playerNumManager");
 
     }
 
@@ -36,6 +38,7 @@ public class GameOver : MonoBehaviour
             CameraControler.gameObject.SetActive(false);
             canvas.gameObject.SetActive(false); //プレイ中に表示されるテキストを非表示
             Destroy(stageManager);
+            Destroy(playerNum);
 
 
             // Debug.Log("Hit");
