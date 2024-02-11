@@ -14,18 +14,21 @@ public class GoGame : MonoBehaviour
     private Vector3 pos;
     private Vector3 rot;
     private float count = 1;
+    private GameObject canvas;
     //private Vector3 addVector = (gogame_transform.position - initial_object.transform.position)
     public void go()
     {
         GetComponent<AudioSource>().Play();
         count = time * fps;
         isStart = true;
+        canvas.SetActive(false); //オブジェクトCanvasを無効化
 
     }
     private void Start()
     {
         pos = (gogame_transform.position - initial_object.transform.position)/ (time * fps);
         rot = (gogame_transform.eulerAngles - initial_object.transform.eulerAngles) / (time * fps);
+        canvas = GameObject.Find("Canvas");
 
     }
     void Update()

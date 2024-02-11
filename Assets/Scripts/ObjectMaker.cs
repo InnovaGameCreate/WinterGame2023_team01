@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectMaker : MonoBehaviour
 {
     [SerializeField] private GameObject[] Tsumiki;
+    [SerializeField] private GameObject[] Foods;
     [SerializeField] private GameObject[] Sonota;
     [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
     [SerializeField] private float wait = 3;
@@ -62,6 +63,11 @@ public class ObjectMaker : MonoBehaviour
                 Instantiate(tsumiki, spawnPosition, tsumiki.transform.rotation);
                 break;
             case 1:
+                random = Random.Range(0, Foods.Length);
+                GameObject foods = Sonota[random];
+                Instantiate(foods, spawnPosition, foods.transform.rotation);
+                break;
+            case 2:
                 random = Random.Range(0, Sonota.Length);
                 GameObject sonota = Sonota[random];
                 Instantiate(sonota, spawnPosition, sonota.transform.rotation);
@@ -71,8 +77,6 @@ public class ObjectMaker : MonoBehaviour
                 GameObject def = Tsumiki[random];
                 Instantiate(def, spawnPosition, def.transform.rotation);
                 break;
-
-
 
         }
 

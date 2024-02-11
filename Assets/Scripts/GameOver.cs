@@ -8,21 +8,30 @@ public class GameOver : MonoBehaviour
     [SerializeField]private GameObject CanvasPrefab;
     //[SerializeField]private GameObject GoTitlePrefab; //要らなくね？
     [SerializeField]private GameObject CameraControler;
+    private GameObject stageManager;
 
+    private void Start()
+    {
+        stageManager = GameObject.Find("StageManager");
+
+    }
 
     void OnCollisionEnter(Collision collision)
     {
-      // Canvasプレハブをアクティブ
-      Instantiate(CanvasPrefab);
-      // シーン切り替えでResult表示
-      // SceneManager.LoadScene("Result");
+        // Canvasプレハブをアクティブ
+        Instantiate(CanvasPrefab);
+        // シーン切り替えでResult表示
+        // SceneManager.LoadScene("Result");
 
-      // GoTitleを表示
-      //Instantiate(GoTitlePrefab); //これもいらなくね？
+        // GoTitleを表示
+        //Instantiate(GoTitlePrefab); //これもいらなくね？
 
-      // CameraControlerを非アクティブ
-      CameraControler.gameObject.SetActive(false);
+        // CameraControlerを非アクティブ
+        CameraControler.gameObject.SetActive(false);
 
-      // Debug.Log("Hit");
+        Destroy(stageManager);
+        
+
+        // Debug.Log("Hit");
     }
 }
