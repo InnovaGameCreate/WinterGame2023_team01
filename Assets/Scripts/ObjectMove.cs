@@ -16,8 +16,8 @@ public class ObjectMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RotetionSpeed = 0.5f;
-        MoveSpeed = 0.5f;
+        RotetionSpeed = 1;
+        MoveSpeed = 1;
         countSet();
         Debug.Log("count:" + count);
 
