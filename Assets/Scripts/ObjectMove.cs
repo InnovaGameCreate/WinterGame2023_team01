@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed;
-    [SerializeField] private float xRotetionSpeed = 50;
-    [SerializeField] private float yRotetionSpeed = 80;
+    private float MoveSpeed;
+    private float RotetionSpeed;
+    //[SerializeField] private float yRotetionSpeed = 80;
     private float xMoverange = 10;
     private float zMoverange = 10;
-
     private int count = 0;
     private bool allowMovement = true;
     private Rigidbody rb;
@@ -17,6 +16,7 @@ public class ObjectMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RotetionSpeed = 1;
         MoveSpeed = 0.8f;
         countSet();
         Debug.Log("count:" + count);
@@ -56,28 +56,35 @@ public class ObjectMove : MonoBehaviour
 
             float horizontalInput = 0;
             float verticalInput = 0;
+            float xRotate = 1;
+            float zRotate = 1;
 
             if (count == 0)
             {
                 //デフォルトの移動
                 horizontalInput = Input.GetAxis("Horizontal");
                 verticalInput = Input.GetAxis("Vertical");
-            }else 
-            if (count == 1)
+                zRotate = 0;
+            }
+            else if (count == 1)
             {
                 horizontalInput = -Input.GetAxis("Vertical");
                 verticalInput = Input.GetAxis("Horizontal");
-            }else
-            if (count == 2)
+                xRotate = 0;
+            }
+            else if (count == 2)
             {
                 horizontalInput = -Input.GetAxis("Horizontal");
                 verticalInput = -Input.GetAxis("Vertical");
+                xRotate = -xRotate;
+                zRotate = 0;
             }
-            else
-            if (count == 3)
+            else if (count == 3)
             {
                 horizontalInput = Input.GetAxis("Vertical");
                 verticalInput = -Input.GetAxis("Horizontal");
+                xRotate = 0;
+                zRotate = -zRotate;
             }
             else
             {
@@ -87,22 +94,18 @@ public class ObjectMove : MonoBehaviour
             if (zMoverange < this.transform.position.z && verticalInput > 0)
             {
                 verticalInput = 0;
-                Debug.Log("z");
             }
             else if (-zMoverange > this.transform.position.z && verticalInput < 0)
             {
                 verticalInput = 0;
-                Debug.Log("-z");
             }
             else if (xMoverange < this.transform.position.x && horizontalInput > 0)
             {
                 horizontalInput = 0;
-                Debug.Log("x");
             }
             else if (-xMoverange > this.transform.position.x && horizontalInput < 0)
             {
                 horizontalInput = 0;
-                Debug.Log("-x");
             }
             else
             {
@@ -113,11 +116,12 @@ public class ObjectMove : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
-                transform.Rotate(Vector3.right, yRotetionSpeed * Time.deltaTime, Space.World);
+                Vector3 rotate = new Vector3(xRotate, 0f, zRotate) * RotetionSpeed; 
+                transform.Rotate(rotate, Space.World);
             }
             else
             {
-                transform.Rotate(Vector3.up, xRotetionSpeed * Time.deltaTime, Space.World);
+                //transform.Rotate(Vector3.up, xRotetionSpeed * Time.deltaTime, Space.World);
             }
         }
     }
