@@ -17,8 +17,10 @@ public class ObjectMaker : MonoBehaviour
     public int count;
     private string targetTag = "Object";
     StageSelect stagemanager;
+    PlayerNum pleyermanager;
     GameObject obj;
     private int stage_num;
+    public int player_num;
     public bool game_end = false;
 
     // Start is called before the first frame update
@@ -27,8 +29,19 @@ public class ObjectMaker : MonoBehaviour
         obj = GameObject.Find("StageManager");
         stagemanager = obj.GetComponent<StageSelect>();
         stage_num = stagemanager.stage_num;
+
+        obj = GameObject.Find("playerNumManager");
+        pleyermanager = obj.GetComponent<PlayerNum>();
+        player_num = pleyermanager.player_num;
+
         SpawnObject();
         count = 0;
+    }
+
+    public int Player_num
+    {
+        get { return player_num; }
+        set { player_num = value; }
     }
 
     public int Count
@@ -138,7 +151,7 @@ public class ObjectMaker : MonoBehaviour
 
         if (!game_end)
         {
-            players = count % 2;
+            players = count % (player_num+1);
         }
     }
 
@@ -158,20 +171,17 @@ public class ObjectMaker : MonoBehaviour
             if (objrb != null && objrb.velocity.magnitude <= 0.08f)
             {
                 objectMoving = true;
-                Debug.Log("objectMoving True");
                 break;
             }
         }
 
         if (objectMoving)
         {
-            Debug.Log("新しいオブジェクトが生成される");
             SpawnObject();
             count++;
         }
         else
         {
-            Debug.Log("オブジェクトがまだ動いている");
             StartCoroutine(WaitGenerateObject());
         }
     }
