@@ -9,6 +9,7 @@ public class ObjectMaker : MonoBehaviour
     [SerializeField] private float wait = 3;
     [SerializeField] private int player; 
     public float maxY = 0;
+    public float minY = 0;
     bool objectMoving = true;
     bool canMake = true;
     public int count;
@@ -67,13 +68,34 @@ public class ObjectMaker : MonoBehaviour
         return maxY;
     }
 
+    float FindMinY()
+    {
+        float minY = float.MaxValue;
+
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(targetTag);
+
+        foreach (GameObject obj in objectsWithTag)
+        {
+            minY = Mathf.Min(minY, obj.transform.position.y);
+        }
+
+        return minY;
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return) && canMake)
         {
-            canMake = false;    
-            StartCoroutine(WaitGenerateObject());
+            minY = FindMinY();
+            if (minY > -1)
+            {
+                canMake = false;
+                StartCoroutine(WaitGenerateObject());
+            }
+            else
+            {
+                canMake = false;
+            }
         }
     }
 
@@ -90,7 +112,7 @@ public class ObjectMaker : MonoBehaviour
             Debug.Log(objrb.velocity.magnitude);
             objectMoving = false;
 
-            if (objrb != null && objrb.velocity.magnitude <= 0.01f)
+            if (objrb != null && objrb.velocity.magnitude <= 0.08f)
             {
                 objectMoving = true;
                 Debug.Log("objectMoving True");

@@ -117,5 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  xRotetionSpeed: 40
-  yRotetionSpeed: 80
+  xRotationSpeed: 50
+  yRotationSpeed: 80
+  cameras:
+  - {fileID: 0}
+  - {fileID: 0}

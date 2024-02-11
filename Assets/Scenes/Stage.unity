@@ -1643,6 +1643,7 @@ MonoBehaviour:
   wait: 3
   player: 0
   maxY: 0
+  minY: 0
   count: 0
 --- !u!4 &1842206286
 Transform:

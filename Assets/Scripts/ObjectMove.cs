@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed = 1;
+    [SerializeField] private float MoveSpeed;
     [SerializeField] private float xRotetionSpeed = 50;
     [SerializeField] private float yRotetionSpeed = 80;
 
@@ -16,6 +16,7 @@ public class ObjectMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MoveSpeed = 0.8f;
         countSet();
         Debug.Log("count:" + count);
 
@@ -26,8 +27,11 @@ public class ObjectMove : MonoBehaviour
     {
         CameraControl cameracontrol;
         GameObject obj = GameObject.Find("CameraControler");
-        cameracontrol = obj.GetComponent<CameraControl>();
-        count = cameracontrol.count;
+        if (obj)
+        {
+            cameracontrol = obj.GetComponent<CameraControl>();
+            count = cameracontrol.count;
+        }
     }
 
     // Update is called once per frame
