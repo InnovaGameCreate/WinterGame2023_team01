@@ -33,8 +33,7 @@ public class Score : MonoBehaviour
         countValue = objectMaker.Count;
         yValue = objectMaker.MaxY;
         end = objectMaker.game_end;
-        //score = countValue;
-        //score = yValue;
+
         if (!end) {
             score = (float)countValue * weight1 + yValue * weight2;
             score = (int)Math.Floor(score);
