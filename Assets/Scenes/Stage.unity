@@ -1928,7 +1928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230, y: 20}
+  m_AnchoredPosition: {x: 230, y: 15}
   m_SizeDelta: {x: 230, y: 230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366742120
@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\u8996<style=p1>\u3057</style>\u70B9<style=p2>\u3066\u3093</style>\u5207<style=p1>\u304D</style>\u308A\u66FF<style=p1>\u304B</style>\u3048\uFF1ASpace\n\u7E26<style=p2>\u305F\u3066</style>\u56DE<style=p2>\u304B\u3044</style>\u8EE2<style=p2>\u3066\u3093</style>\uFF1ASift    
+  m_text: "\n\u8996<style=p1>\u3057</style>\u70B9<style=p2>\u3066\u3093</style>\u5207<style=p1>\u304D</style>\u308A\u66FF<style=p1>\u304B</style>\u3048\uFF1ASpace\n\u56DE<style=p2>\u304B\u3044</style>\u8EE2<style=p2>\u3066\u3093</style>\uFF1ASift    
     \n\u79FB<style=p1>\u3044</style>\u52D5<style=p2>\u3069\u3046</style>\uFF1AWASD\n(\u2191\u2190\u2193\u2192)\n\u843D<style=p2>\u3089\u3063</style>\u843D<style=p1>\u304B</style>\uFF1AEnter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
@@ -1979,8 +1979,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2697,6 +2697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   turn: 0
+  player_num: 0
 --- !u!4 &1791807127
 Transform:
   m_ObjectHideFlags: 0
@@ -2766,6 +2767,7 @@ MonoBehaviour:
   maxY: 0
   minY: 0
   count: 0
+  player_num: 0
   game_end: 0
 --- !u!4 &1842206286
 Transform:
@@ -3128,7 +3130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 248, y: 111}
+  m_AnchoredPosition: {x: 248, y: 115}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2042743605
@@ -3172,7 +3174,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2d4297f74f945224081bd3cecc7d3947, type: 3}
-    m_FontSize: 25
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
