@@ -82,7 +82,7 @@ public class ObjectMaker : MonoBehaviour
                     break;
                 case 1:
                     random = Random.Range(0, Foods.Length);
-                    GameObject foods = Sonota[random];
+                    GameObject foods = Foods[random];
                     Instantiate(foods, spawnPosition, foods.transform.rotation);
                     break;
                 case 2:

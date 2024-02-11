@@ -2373,11 +2373,14 @@ MonoBehaviour:
   Foods:
   - {fileID: 278842575314599615, guid: 54d81fb3628090c47b6646437c88a556, type: 3}
   - {fileID: 6530363366002438373, guid: 453f5781b4b216b4c842ef50b4f715e3, type: 3}
+  - {fileID: 5727318293729276409, guid: 7cb0eba865a39da4b9f08ab25663544b, type: 3}
   Sonota:
   - {fileID: 8467918902683825826, guid: 60319b9e8261c0e4495b6f26aaa74feb, type: 3}
   - {fileID: 7543431417135491248, guid: 0bc080dc458e4e345a5e2af5759d58c6, type: 3}
   - {fileID: 842214419861143544, guid: b8a64e539d625d143a37fecf2967604c, type: 3}
   - {fileID: 7628977021562177441, guid: e6395da14940ec44e8086d96b1e4999b, type: 3}
+  - {fileID: 4175243873947143378, guid: 1d09cfb9331c67c4497984a7317d63e5, type: 3}
+  - {fileID: 5115363102452504006, guid: 11a0d70b511f2d5469d92fbd0245c3b0, type: 3}
   spawnOffset: 6
   wait: 3
   players: 0
