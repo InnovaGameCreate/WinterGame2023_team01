@@ -301,6 +301,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478778491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3645495740577468165, guid: 63845113a7692fc4d909c2a79f453f52, type: 3}
+  m_PrefabInstance: {fileID: 3645495741556369555}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &769604339
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,17 +338,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769604339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 789960516}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.7, y: -33.6}
+  m_AnchoredPosition: {x: -6.700012, y: -33.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769604341
@@ -352,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244781b316670b84c8dc5ec9a516042d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 769604342}
+  scoreText: {fileID: 478778491}
   player_num: 0
 --- !u!114 &769604342
 MonoBehaviour:
@@ -500,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   turn: 0
-
+  player_num: 0
 --- !u!4 &1809232750
 Transform:
   m_ObjectHideFlags: 0
@@ -523,6 +534,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2433691926987577298, guid: 63845113a7692fc4d909c2a79f453f52, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3645495740474371907, guid: 63845113a7692fc4d909c2a79f453f52, type: 3}
       propertyPath: m_Pivot.x
       value: 0

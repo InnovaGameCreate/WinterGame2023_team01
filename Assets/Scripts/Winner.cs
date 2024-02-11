@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class Winner : MonoBehaviour
 {
-    [SerializeField] private Text scoreText;
+    [SerializeField] private Text winnerText;
     private GameObject data;
     private Data dataCs;
-    public int player_num;
+    private int player_num;
     private int turn;
 
     // Start is called before the first frame update
@@ -17,22 +17,16 @@ public class Winner : MonoBehaviour
     {
         data = GameObject.Find("Data");
         dataCs = data.GetComponent<Data>();
+        player_num = dataCs.player_num;
+        turn = dataCs.turn % (player_num + 1) + 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        player_num = dataCs.player_num;
-        turn = dataCs.turn % (player_num + 1) + 1;
-
-        Debug.Log("winner" + player_num);
-        if (player_num != 0)
-        {
-            scoreText.text = "WINNER Player" + turn.ToString();
-        }
-        else
-        {
-            scoreText.text = " ";
-        }
+        Debug.Log("‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ");
+    
+        winnerText.text = "WINNER Player" + turn.ToString();
+      
     }
 }

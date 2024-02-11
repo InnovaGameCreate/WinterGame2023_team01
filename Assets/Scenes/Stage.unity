@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectMaker: {fileID: 1842206285}
-  turnText: {fileID: 0}
+  turnText: {fileID: 1154109150}
 --- !u!114 &1154109150
 MonoBehaviour:
   m_ObjectHideFlags: 0
