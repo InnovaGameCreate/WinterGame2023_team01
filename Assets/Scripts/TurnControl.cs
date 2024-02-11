@@ -29,6 +29,30 @@ public class TurnControl : MonoBehaviour
         player_num = objectMaker.player_num;
         dataCs.player_num = player_num;
         player = objectMaker.players + 1;
+        dataCs.turn = player;
+
+        Debug.Log(player_num);
+        if (player_num == 0)
+        {
+            turnText.text = "Solo Mode";
+        }
+        else
+        {
+            switch (player)
+            {
+                case 1:
+                    turnText.text = "<style=Blue>Player" + player + "</style>";
+                    break;
+                case 2:
+                    turnText.text = "<style=Red>Player" + player + "</style>";
+                    break;
+
+                default:
+                    turnText.text = "Player" + player;
+                    break;
+
+            }
+        }
 
     }
 }
