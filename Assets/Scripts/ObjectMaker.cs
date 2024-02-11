@@ -27,6 +27,7 @@ public class ObjectMaker : MonoBehaviour
     // Start is called before the first frame update
     void selectObjects()
     {
+        //使用するオブジェクトの種類を決定
         switch (stage_num)
         {
             case 0:
