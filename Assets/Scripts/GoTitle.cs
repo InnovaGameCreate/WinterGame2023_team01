@@ -11,6 +11,7 @@ public class GoTitle : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) GoTitlef();
+        //if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) GoTitlef(); //spaceまたはreturnでタイトルに戻る
+        if (Input.GetKeyDown(KeyCode.Space)) GoTitlef(); //spaceでタイトルに戻る
     }
 }

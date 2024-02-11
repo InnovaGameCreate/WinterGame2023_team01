@@ -301,9 +301,9 @@ MonoBehaviour:
   stageselect: {fileID: 1031917993}
   stage_num: 0
   stages:
-  - "\u7A4D\u307F\u6728"
-  - "\u98DF\u3079\u7269"
-  - "\u305D\u306E\u4ED6"
+  - "\u3064\u307F\u304D"
+  - "\u305F\u3079\u3082\u306E"
+  - "\u305D\u306E\u305F"
 --- !u!4 &37495763
 Transform:
   m_ObjectHideFlags: 0

@@ -9,10 +9,12 @@ public class GameOver : MonoBehaviour
     //[SerializeField]private GameObject GoTitlePrefab; //要らなくね？
     [SerializeField]private GameObject CameraControler;
     private GameObject stageManager;
+    private GameObject canvas;
 
     private void Start()
     {
         stageManager = GameObject.Find("StageManager");
+        canvas = GameObject.Find("Canvas");
 
     }
 
@@ -28,7 +30,7 @@ public class GameOver : MonoBehaviour
 
         // CameraControlerを非アクティブ
         CameraControler.gameObject.SetActive(false);
-
+        canvas.gameObject.SetActive(false);
         Destroy(stageManager);
         
 
