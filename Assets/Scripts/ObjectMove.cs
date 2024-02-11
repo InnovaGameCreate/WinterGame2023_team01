@@ -16,8 +16,8 @@ public class ObjectMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RotetionSpeed = 1;
-        MoveSpeed = 0.8f;
+        RotetionSpeed = 0.5f;
+        MoveSpeed = 0.5f;
         countSet();
         Debug.Log("count:" + count);
 
@@ -114,14 +114,15 @@ public class ObjectMove : MonoBehaviour
             }
             
 
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift))
             {
                 Vector3 rotate = new Vector3(xRotate, 0f, zRotate) * RotetionSpeed; 
                 transform.Rotate(rotate, Space.World);
             }
-            else
+            else if (Input.GetKey(KeyCode.RightShift))
             {
-                //transform.Rotate(Vector3.up, xRotetionSpeed * Time.deltaTime, Space.World);
+                Vector3 rotate = new Vector3(-zRotate, 0f, -xRotate) * RotetionSpeed;
+                transform.Rotate(rotate, Space.World);
             }
         }
     }

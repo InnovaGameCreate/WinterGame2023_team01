@@ -4,28 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class result : MonoBehaviour
+public class TurnControl : MonoBehaviour
 {
-    [SerializeField] private Text scoreText;
+    [SerializeField] private ObjectMaker objectMaker;
+    [SerializeField] private Text turnText;
     private GameObject data;
     private Data dataCs;
-    private float score;
-    private int turn;
+    int player;
 
     // Start is called before the first frame update
     void Start()
     {
         data = GameObject.Find("Data");
         dataCs = data.GetComponent<Data>();
-        score = dataCs.score;
-        turn = dataCs.turn % 2 + 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "スコア：" + score.ToString();
-
-        scoreText.text = "WINNER Player" + turn.ToString();
+        dataCs.turn = player;
+        player = objectMaker.players + 1;
+        turnText.text = "Player" + player.ToString();
     }
 }
