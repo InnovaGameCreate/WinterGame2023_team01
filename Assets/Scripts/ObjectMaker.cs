@@ -9,7 +9,7 @@ public class ObjectMaker : MonoBehaviour
     [SerializeField] private GameObject[] Sonota;
     [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
     [SerializeField] private float wait = 3;
-    [SerializeField] private int player; 
+    public int players; 
     public float maxY = 0;
     public float minY = 0;
     bool objectMoving = true;
@@ -134,6 +134,11 @@ public class ObjectMaker : MonoBehaviour
         {
             canMake = false;
             StartCoroutine(WaitGenerateObject());
+        }
+
+        if (!game_end)
+        {
+            players = count % 2;
         }
     }
 

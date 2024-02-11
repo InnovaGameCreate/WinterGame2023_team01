@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50f1d176a69f676479d4ff261c3d49ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -212,9 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745cead72f5568944b60f3c2ab15c280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  xRotetionSpeed: 40
-  yRotetionSpeed: 80
 --- !u!114 &-2008352783123856199
 MonoBehaviour:
   m_ObjectHideFlags: 0
