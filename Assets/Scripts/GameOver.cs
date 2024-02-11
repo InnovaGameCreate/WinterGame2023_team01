@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
 
         // CameraControlerを非アクティブ
         CameraControler.gameObject.SetActive(false);
-        canvas.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false); //プレイ中に表示されるテキストを非表示
         Destroy(stageManager);
         
 
