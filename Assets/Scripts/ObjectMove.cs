@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ObjectMove : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed = 1;
+    [SerializeField] private float MoveSpeed;
     [SerializeField] private float xRotetionSpeed = 50;
     [SerializeField] private float yRotetionSpeed = 80;
-
+    private float xMoverange = 10;
+    private float zMoverange = 10;
 
     private int count = 0;
     private bool allowMovement = true;
@@ -16,6 +17,7 @@ public class ObjectMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MoveSpeed = 0.8f;
         countSet();
         Debug.Log("count:" + count);
 
@@ -26,8 +28,11 @@ public class ObjectMove : MonoBehaviour
     {
         CameraControl cameracontrol;
         GameObject obj = GameObject.Find("CameraControler");
-        cameracontrol = obj.GetComponent<CameraControl>();
-        count = cameracontrol.count;
+        if (obj)
+        {
+            cameracontrol = obj.GetComponent<CameraControl>();
+            count = cameracontrol.count;
+        }
     }
 
     // Update is called once per frame
@@ -79,8 +84,32 @@ public class ObjectMove : MonoBehaviour
                 Debug.Log("count ÇÃílÇ™Ç®Ç©ÇµÇ¢ÅB" + count);
             }
 
-            Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed / 10;
-            transform.Translate(movement,Space.World);
+            if (zMoverange < this.transform.position.z && verticalInput > 0)
+            {
+                verticalInput = 0;
+                Debug.Log("z");
+            }
+            else if (-zMoverange > this.transform.position.z && verticalInput < 0)
+            {
+                verticalInput = 0;
+                Debug.Log("-z");
+            }
+            else if (xMoverange < this.transform.position.x && horizontalInput > 0)
+            {
+                horizontalInput = 0;
+                Debug.Log("x");
+            }
+            else if (-xMoverange > this.transform.position.x && horizontalInput < 0)
+            {
+                horizontalInput = 0;
+                Debug.Log("-x");
+            }
+            else
+            {
+                Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * MoveSpeed / 10;
+                transform.Translate(movement, Space.World);
+            }
+            
 
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {

@@ -11,6 +11,7 @@ public class ObjectMaker : MonoBehaviour
     [SerializeField] private float wait = 3;
     [SerializeField] private int player; 
     public float maxY = 0;
+    public float minY = 0;
     bool objectMoving = true;
     bool canMake = true;
     public int count;
@@ -18,6 +19,7 @@ public class ObjectMaker : MonoBehaviour
     StageSelect stagemanager;
     GameObject obj;
     private int stage_num;
+    public bool game_end = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,45 +43,61 @@ public class ObjectMaker : MonoBehaviour
         set { maxY = value; }
     }
 
+    public bool Game_end
+    {
+        get { return game_end; }
+        set { game_end = value; }
+    }
+
     void SpawnObject()
     {
         canMake = true;
 
         maxY = FindMaxY();
+        minY = FindMinY();
 
-        if(maxY < 0)
+
+        if (maxY < 0)
         {
             maxY = 0;
+        }
+
+        if (minY < -1)
+        {
+            game_end = true;
         }
 
         Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);
 
         int random = 0;
-      
-        switch (stage_num) {
-            case 0:
-                random = Random.Range(0, Tsumiki.Length);
-                GameObject tsumiki = Tsumiki[random];
-                Instantiate(tsumiki, spawnPosition, tsumiki.transform.rotation);
-                break;
-            case 1:
-                random = Random.Range(0, Foods.Length);
-                GameObject foods = Sonota[random];
-                Instantiate(foods, spawnPosition, foods.transform.rotation);
-                break;
-            case 2:
-                random = Random.Range(0, Sonota.Length);
-                GameObject sonota = Sonota[random];
-                Instantiate(sonota, spawnPosition, sonota.transform.rotation);
-                break;
-            default:
-                random = Random.Range(0, Tsumiki.Length);
-                GameObject def = Tsumiki[random];
-                Instantiate(def, spawnPosition, def.transform.rotation);
-                break;
 
+        if (!game_end)
+        {
+            switch (stage_num)
+            {
+                case 0:
+                    random = Random.Range(0, Tsumiki.Length);
+                    GameObject tsumiki = Tsumiki[random];
+                    Instantiate(tsumiki, spawnPosition, tsumiki.transform.rotation);
+                    break;
+                case 1:
+                    random = Random.Range(0, Foods.Length);
+                    GameObject foods = Sonota[random];
+                    Instantiate(foods, spawnPosition, foods.transform.rotation);
+                    break;
+                case 2:
+                    random = Random.Range(0, Sonota.Length);
+                    GameObject sonota = Sonota[random];
+                    Instantiate(sonota, spawnPosition, sonota.transform.rotation);
+                    break;
+                default:
+                    random = Random.Range(0, Tsumiki.Length);
+                    GameObject def = Tsumiki[random];
+                    Instantiate(def, spawnPosition, def.transform.rotation);
+                    break;
+
+            }
         }
-
     }
 
     float FindMaxY()
@@ -96,12 +114,25 @@ public class ObjectMaker : MonoBehaviour
         return maxY;
     }
 
+    float FindMinY()
+    {
+        float minY = float.MaxValue;
+
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(targetTag);
+
+        foreach (GameObject obj in objectsWithTag)
+        {
+            minY = Mathf.Min(minY, obj.transform.position.y);
+        }
+
+        return minY;
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return) && canMake)
         {
-            canMake = false;    
+            canMake = false;
             StartCoroutine(WaitGenerateObject());
         }
     }
@@ -119,7 +150,7 @@ public class ObjectMaker : MonoBehaviour
             Debug.Log(objrb.velocity.magnitude);
             objectMoving = false;
 
-            if (objrb != null && objrb.velocity.magnitude <= 0.01f)
+            if (objrb != null && objrb.velocity.magnitude <= 0.08f)
             {
                 objectMoving = true;
                 Debug.Log("objectMoving True");
