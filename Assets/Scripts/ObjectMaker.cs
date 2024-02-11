@@ -7,6 +7,7 @@ public class ObjectMaker : MonoBehaviour
     [SerializeField] private GameObject[] Tsumiki;
     [SerializeField] private GameObject[] Foods;
     [SerializeField] private GameObject[] Sonota;
+    private GameObject[] objGroup;
     [SerializeField] float spawnOffset;//置かれたオブジェクトの最大値からの高さ
     [SerializeField] private float wait = 3;
     public int players; 
@@ -24,18 +25,38 @@ public class ObjectMaker : MonoBehaviour
     public bool game_end = false;
 
     // Start is called before the first frame update
+    void selectObjects()
+    {
+        switch (stage_num)
+        {
+            case 0:
+                objGroup = Tsumiki;
+                break;
+            case 1:
+                objGroup = Foods;
+                break;
+            case 2:
+                objGroup = Sonota;
+                break;
+            default:
+                objGroup = Tsumiki;
+                break;
+
+        }
+    }
     void Start()
     {
         obj = GameObject.Find("StageManager");
         stagemanager = obj.GetComponent<StageSelect>();
         stage_num = stagemanager.stage_num;
-
+        selectObjects();
         obj = GameObject.Find("playerNumManager");
         pleyermanager = obj.GetComponent<PlayerNum>();
         player_num = pleyermanager.player_num;
 
         SpawnObject();
         count = 0;
+       
     }
 
     public int Player_num
@@ -82,34 +103,14 @@ public class ObjectMaker : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(0, maxY + spawnOffset, 0);
 
-        int random = 0;
+        int random;
 
         if (!game_end)
         {
-            switch (stage_num)
-            {
-                case 0:
-                    random = Random.Range(0, Tsumiki.Length);
-                    GameObject tsumiki = Tsumiki[random];
-                    Instantiate(tsumiki, spawnPosition, tsumiki.transform.rotation);
-                    break;
-                case 1:
-                    random = Random.Range(0, Foods.Length);
-                    GameObject foods = Foods[random];
-                    Instantiate(foods, spawnPosition, foods.transform.rotation);
-                    break;
-                case 2:
-                    random = Random.Range(0, Sonota.Length);
-                    GameObject sonota = Sonota[random];
-                    Instantiate(sonota, spawnPosition, sonota.transform.rotation);
-                    break;
-                default:
-                    random = Random.Range(0, Tsumiki.Length);
-                    GameObject def = Tsumiki[random];
-                    Instantiate(def, spawnPosition, def.transform.rotation);
-                    break;
-
-            }
+            random = Random.Range(0, objGroup.Length);
+            GameObject fallobj = objGroup[random];
+            Instantiate(fallobj, spawnPosition, fallobj.transform.rotation);
+ 
         }
     }
 
