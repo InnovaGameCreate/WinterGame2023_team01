@@ -1517,7 +1517,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\n\u8996<style=p1>\u3057</style>\u70B9<style=p2>\u3066\u3093</style>\u5207<style=p1>\u304D</style>\u308A\u66FF<style=p1>\u304B</style>\u3048\uFF1ASpace\n\u7E26<style=p2>\u305F\u3066</style>\u56DE<style=p2>\u304B\u3044</style>\u8EE2<style=p2>\u3066\u3093</style>\uFF1ASift    
-    \n\u79FB<style=p1>\u3044</style>\u52D5<style=p2>\u3069\u3046</style>\uFF1AWASD\n(\u2191\u2190\u2193\u2192)"
+    \n\u79FB<style=p1>\u3044</style>\u52D5<style=p2>\u3069\u3046</style>\uFF1AWASD\n(\u2191\u2190\u2193\u2192)\n\u843D<style=p2>\u3089\u3063</style>\u843D<style=p1>\u304B</style>\uFF1AEnter"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
   m_sharedMaterial: {fileID: -3734009832005612792, guid: 5e94f4b3f1a159e42bcbc308b056a387, type: 2}
