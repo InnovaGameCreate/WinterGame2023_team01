@@ -130,9 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745cead72f5568944b60f3c2ab15c280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
-  xRotetionSpeed: 50
-  yRotetionSpeed: 80
 --- !u!114 &3094180958689226520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +156,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ebe68069497adbc41a46a8191218a601, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
