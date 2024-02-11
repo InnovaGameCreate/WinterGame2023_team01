@@ -2735,7 +2735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c1d68489e0a49dcb5b99867e095fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  time: 3
   fps: 60
   initial_object: {fileID: 1838115034}
   gogame_transform: {fileID: 225829788}
