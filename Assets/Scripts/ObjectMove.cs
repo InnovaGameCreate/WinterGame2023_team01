@@ -12,6 +12,7 @@ public class ObjectMove : MonoBehaviour
     private int count = 0;
     private bool allowMovement = true;
     private Rigidbody rb;
+    private Collider colliderComponent;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,11 @@ public class ObjectMove : MonoBehaviour
         MoveSpeed = 1;
         countSet();
         rb = GetComponent<Rigidbody>();
+        colliderComponent = GetComponent<Collider>();
+
         rb.useGravity = false;
     }
+
     void countSet()
     {
         CameraControl cameracontrol;
@@ -30,6 +34,16 @@ public class ObjectMove : MonoBehaviour
         {
             cameracontrol = obj.GetComponent<CameraControl>();
             count = cameracontrol.count;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (GetComponent<Collider>().gameObject.tag == "Object" && allowMovement)
+        {
+            rb.velocity = Vector3.zero;
+            rb.useGravity = true;
+            allowMovement = false;
         }
     }
 
@@ -58,7 +72,7 @@ public class ObjectMove : MonoBehaviour
 
             if (count == 0)
             {
-                //ƒfƒtƒHƒ‹ƒg‚ÌˆÚ“®
+                //ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ç§»å‹•
                 horizontalInput = Input.GetAxis("Horizontal");
                 verticalInput = Input.GetAxis("Vertical");
                 zRotate = 0;
@@ -85,7 +99,7 @@ public class ObjectMove : MonoBehaviour
             }
             else
             {
-                Debug.Log("count ‚Ì’l‚ª‚¨‚©‚µ‚¢B" + count);
+                Debug.Log("count ã®å€¤ãŒãŠã‹ã—ã„ã€‚" + count);
             }
 
             if (zMoverange < this.transform.position.z && verticalInput > 0)
