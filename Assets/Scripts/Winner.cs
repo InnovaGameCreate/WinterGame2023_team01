@@ -30,7 +30,15 @@ public class Winner : MonoBehaviour
         }
         else
         {
-            winnerText.text = "WINNER Player" + turn.ToString();
+            if(turn == 1)
+            {
+                winnerText.text = "WINNER <style=Red>Player" + turn.ToString() + "</style>";
+            }
+            else
+            {
+                winnerText.text = "WINNER <style=Blue>Player" + turn.ToString() + "</style>";
+
+            }
         }
     }
 }
