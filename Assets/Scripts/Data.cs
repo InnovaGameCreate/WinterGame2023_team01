@@ -8,7 +8,7 @@ public class Data : MonoBehaviour
     public int turn;
     public int player_num;
     public int winner_count;
-
+    public int winner_count1;
 
     // Start is called before the first frame update
     void Start()
