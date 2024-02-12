@@ -10,7 +10,7 @@ public class Winner : MonoBehaviour
     private GameObject data;
     private Data dataCs;
     private int player_num;
-    private int turn;
+    private int winner;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Winner : MonoBehaviour
         data = GameObject.Find("Data");
         dataCs = data.GetComponent<Data>();
         player_num = dataCs.player_num;
-        turn = dataCs.turn % (player_num + 1) + 1;
+        winner = dataCs.winner_count % (player_num+1) +1;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Winner : MonoBehaviour
         }
         else
         {
-            winnerText.text = "WINNER Player" + turn.ToString();
+            winnerText.text = "WINNER Player" + winner.ToString();
         }
     }
 }

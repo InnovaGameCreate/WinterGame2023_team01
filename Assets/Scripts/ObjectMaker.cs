@@ -16,6 +16,7 @@ public class ObjectMaker : MonoBehaviour
     bool objectMoving = true;
     bool canMake = true;
     public int count;
+    public int winner_count;
     private string targetTag = "Object";
     StageSelect stagemanager;
     PlayerNum pleyermanager;
@@ -60,6 +61,7 @@ public class ObjectMaker : MonoBehaviour
         player_num = pleyermanager.player_num;
         SpawnObject();
         count = 0;
+        winner_count = 0;
         objectmake = false;
         game_end = false;
 
@@ -76,6 +78,12 @@ public int Player_num
     {
         get { return count; }
         set { count = value; }
+    }
+
+    public int WinnerCount
+    {
+        get { return winner_count; }
+        set { winner_count = value; }
     }
 
     public float MaxY
@@ -155,6 +163,7 @@ public int Player_num
         if (Input.GetKeyDown(KeyCode.Return) && !objectmake)
         {
             objectmake = true;
+            winner_count++;
         }
 
         if (objectmake && canMake)
