@@ -16,13 +16,17 @@ public class ObjectMaker : MonoBehaviour
     bool objectMoving = true;
     bool canMake = true;
     public int count;
+    public int winner_count;
     private string targetTag = "Object";
     StageSelect stagemanager;
     PlayerNum pleyermanager;
     GameObject obj;
     private int stage_num;
     public int player_num;
-    public bool game_end = false;
+    public bool game_end;
+    public bool objectmake;
+
+    private Collider colliderComponent;
 
     // Start is called before the first frame update
     void selectObjects()
@@ -45,6 +49,7 @@ public class ObjectMaker : MonoBehaviour
 
         }
     }
+
     void Start()
     {
         obj = GameObject.Find("StageManager");
@@ -54,13 +59,16 @@ public class ObjectMaker : MonoBehaviour
         obj = GameObject.Find("playerNumManager");
         pleyermanager = obj.GetComponent<PlayerNum>();
         player_num = pleyermanager.player_num;
-
         SpawnObject();
         count = 0;
-       
+        winner_count = 0;
+        objectmake = false;
+        game_end = false;
+
+        colliderComponent = GetComponent<Collider>();
     }
 
-    public int Player_num
+public int Player_num
     {
         get { return player_num; }
         set { player_num = value; }
@@ -70,6 +78,12 @@ public class ObjectMaker : MonoBehaviour
     {
         get { return count; }
         set { count = value; }
+    }
+
+    public int WinnerCount
+    {
+        get { return winner_count; }
+        set { winner_count = value; }
     }
 
     public float MaxY
@@ -142,11 +156,19 @@ public class ObjectMaker : MonoBehaviour
 
         return minY;
     }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && canMake)
+        if (Input.GetKeyDown(KeyCode.Return) && !objectmake)
         {
+            objectmake = true;
+            winner_count++;
+        }
+
+        if (objectmake && canMake)
+        {
+            objectmake = false;
             canMake = false;
             StartCoroutine(WaitGenerateObject());
         }
