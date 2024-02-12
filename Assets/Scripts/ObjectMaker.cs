@@ -22,7 +22,10 @@ public class ObjectMaker : MonoBehaviour
     GameObject obj;
     private int stage_num;
     public int player_num;
-    public bool game_end = false;
+    public bool game_end;
+    public bool objectmake;
+
+    private Collider colliderComponent;
 
     // Start is called before the first frame update
     void selectObjects()
@@ -45,6 +48,7 @@ public class ObjectMaker : MonoBehaviour
 
         }
     }
+
     void Start()
     {
         obj = GameObject.Find("StageManager");
@@ -54,13 +58,15 @@ public class ObjectMaker : MonoBehaviour
         obj = GameObject.Find("playerNumManager");
         pleyermanager = obj.GetComponent<PlayerNum>();
         player_num = pleyermanager.player_num;
-
         SpawnObject();
         count = 0;
-       
+        objectmake = false;
+        game_end = false;
+
+        colliderComponent = GetComponent<Collider>();
     }
 
-    public int Player_num
+public int Player_num
     {
         get { return player_num; }
         set { player_num = value; }
@@ -142,11 +148,18 @@ public class ObjectMaker : MonoBehaviour
 
         return minY;
     }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && canMake)
+        if (Input.GetKeyDown(KeyCode.Return) && !objectmake)
         {
+            objectmake = true;
+        }
+
+        if (objectmake && canMake)
+        {
+            objectmake = false;
             canMake = false;
             StartCoroutine(WaitGenerateObject());
         }
