@@ -34,7 +34,9 @@ public class Winner : MonoBehaviour
         }
         else
         {
+
             winnerText.text = "WINNER Player" + winner.ToString();
+
         }
     }
 }
