@@ -19,8 +19,6 @@ public class ObjectMove : MonoBehaviour
         RotetionSpeed = 1;
         MoveSpeed = 1;
         countSet();
-        Debug.Log("count:" + count);
-
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
     }
@@ -51,7 +49,6 @@ public class ObjectMove : MonoBehaviour
                 rb.velocity = Vector3.zero;
                 rb.useGravity = true;
                 allowMovement = false;
-                Debug.Log("à⁄ìÆÇ™êßå‰Ç≥ÇÍÇÈ");
             }
 
             float horizontalInput = 0;
