@@ -23,10 +23,14 @@ public class Winner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        Debug.Log("‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ");
-    
-        winnerText.text = "WINNER Player" + turn.ToString();
-      
+    {    
+        if(player_num == 0)
+        {
+            winnerText.text = " ";
+        }
+        else
+        {
+            winnerText.text = "WINNER Player" + turn.ToString();
+        }
     }
 }

@@ -167,7 +167,6 @@ public class ObjectMaker : MonoBehaviour
         foreach (GameObject obj in objectsWithTag)
         {
             Rigidbody objrb = obj.GetComponent<Rigidbody>();
-            Debug.Log(objrb.velocity.magnitude);
             objectMoving = false;
 
             if (objrb != null && objrb.velocity.magnitude <= 0.08f)

@@ -31,7 +31,6 @@ public class TurnControl : MonoBehaviour
         player = objectMaker.players + 1;
         dataCs.turn = player;
 
-        Debug.Log(player_num);
         if (player_num == 0)
         {
             turnText.text = "Solo Mode";
