@@ -13,6 +13,10 @@ public class ObjectMove : MonoBehaviour
     private bool allowMovement = true;
     private Rigidbody rb;
     private Collider colliderComponent;
+    private GameObject data;
+    private Data dataCs;
+    public int winner_count = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,10 @@ public class ObjectMove : MonoBehaviour
         countSet();
         rb = GetComponent<Rigidbody>();
         colliderComponent = GetComponent<Collider>();
+
+        data = GameObject.Find("Data");
+        dataCs = data.GetComponent<Data>();
+        
 
         rb.useGravity = false;
     }
@@ -44,12 +52,15 @@ public class ObjectMove : MonoBehaviour
             rb.velocity = Vector3.zero;
             rb.useGravity = true;
             allowMovement = false;
+            winner_count++;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        dataCs.winner_count1 = winner_count;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             count = (count + 1) % 4;
