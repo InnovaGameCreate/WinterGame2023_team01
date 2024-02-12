@@ -13,6 +13,8 @@ public class TurnControl : MonoBehaviour
     private Data dataCs;
     int player;
     int player_num;
+    public int winner_count;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,8 @@ public class TurnControl : MonoBehaviour
         dataCs.player_num = player_num;
         player = objectMaker.players + 1;
         dataCs.turn = player;
+        winner_count = objectMaker.winner_count;
+        dataCs.winner_count = winner_count;
 
         if (player_num == 0)
         {
